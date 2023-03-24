@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;500;600&display=swap');
+*, *:before,
+*:after { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none;}
+
+body{
+	background-color: rgba(253,253,253,1.00);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.eslogan {
+  text-align: center;
+}
+
+/* container */
+.padded-boxes {
+    display:flex;
+    flex-wrap:wrap;
+    gap:2rem;
+
+    padding: 1rem;
+
+    flex-basis: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* boxes */
+.padded-boxes > * {
+    width:100%;
+    background:#eee;
+    border-radius:.4rem;
+    min-height: 200px;
+}
+
+/* headings */
+.padded-boxes .heading {
+    background:#f97171;
+    margin:0;
+    padding:1rem;
+    border-top-left-radius:.4rem;
+    border-top-right-radius:.4rem;
+    width: 100%;
+    float: left;
+}
+
+/* footer pedido */
+
+.footpedido {
+  background:#585858;
+  color: #ddd;
+  /* position: absolute; */
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  padding:1rem;
+  border-bottom-left-radius: .4rem;
+  border-bottom-right-radius:.4rem;
+  width: 100%;
+  float: left;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* padded content */
+.padded-boxes .padded {
+    
+    position: relative;
+    padding:1rem 1rem;
+}
+
+.padded p {
+  margin: 1rem 0;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    background-image: url('../img/pizza-nav.png');
+    
+  }
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #04aa6d5d;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+
+  .logo {
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+    font-size: 4rem !important;
+}
+
+.oculto {
+    display: none;
+}
+
+#ulIngredientes li, #listaIngredientes li,  #masaElegida li {
+  list-style:none
+}
+
+#ulIngredientes img, #listaIngredientes img {
+  width: 42px;
+  vertical-align:middle;
+}
+
+#masaElegida img {
+  width: 60px;
+  vertical-align:middle;
+  margin-right: 5px;
+}
+
+#masas {
+  flex-basis: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#ingredientes {
+  flex-basis: auto;
+  height: auto;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#pedido {
+  position: relative;
+  flex-basis: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.derecha {
+  float: right;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.add, .del {
+
+  border: none;
+  color: white;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add {
+  background-color: #04AA6D;
+  font-size: 1rem;
+  padding: 8px 10px;
+}
+
+.add:hover {
+  background-color: #038052;
+}
+
+.del {
+  background-color: #aa048c;
+  font-size: 1.5rem;
+  padding: 0 10px;
+}
+
+.del:hover {
+  background-color: #590349;
+}
+
+/* Select option */
+.select-dropdown,
+.select-dropdown * {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+.select-dropdown {
+  position: relative;
+  background-color: #E6E6E6;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+.select-dropdown select {
+  font-size: 1rem;
+  font-weight: normal;
+  max-width: 100%;
+  padding: 8px 24px 8px 10px;
+  border: none;
+  background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  appearance: none;
+}
+.select-dropdown select:active, .select-dropdown select:focus {
+  outline: none;
+  box-shadow: none;
+}
+.select-dropdown:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-top: 5px solid #aaa;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+/* Fin Select option */
+
+/* Modal */
+
+.modal-trigger {
+  border: none;
+  color: white;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  
+  cursor: pointer;
+  border-radius: 4px;
+
+  background-color: #04AA6D;
+  font-size: 1rem;
+  padding: 8px 10px;
+}
+
+.modal-trigger:hover {
+  background-color: #038052;
+}
+
+.modal { display: none; }
+.modal--show,
+.modal--hide { display: flex; } /* classes fired by js for animation control */
+/* This is on the wrapper for the whole modal */
+.modal--align {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+.modal__container {
+  position: relative;
+  width: 100%;
+  /* max-width: 600px; */
+  max-height: 800px;
+  padding: 20px;
+  margin: 12px;
+  background: #fff;
+}
+/* The .modal__close class is used in js but is modified '--x' here */
+.modal__close--x {
+  font-size: 30px; /* this is only because we use unicode for the X in this case */
+  position: absolute;
+  top: 3px;
+  right: 10px;
+}
+/* As there is no href to avoid the hash being added to the URL when clicked we add a pointer */
+/* This 'x' is hidden from screen readers as there is an accessible close button in the modal */
+.modal__close--x:hover {
+  cursor: pointer;
+}
+/* Animations */
+/* Open */
+.modal.modal--show {
+  animation: modal-open 0.3s;
+}
+@keyframes modal-open {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; }
+}
+/* Close */
+.modal.modal--hide {
+  animation: modal-close 0.3s;
+}
+@keyframes modal-close {
+  0%    { opacity: 1; }
+  100%  { opacity: 0; }
+}
+
+/* Fin Modal */
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+/* tablet breakpoint */
+@media (min-width:768px) {
+    .padded-boxes > * {
+        width:calc(50% - 1rem);
+    }
+}

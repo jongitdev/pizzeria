@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haz tu pizza</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active logo">Haz tu pizza</a>
+        <!-- <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a> -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <h2 class="eslogan">Haz tu pizza y te la llevamos a casa</h2>    
+      <div class="padded-boxes">
+        <section id="masas">
+            <h3 class="heading">Elige tu masa</h3>
+            <div class="padded select-dropdown">
+                <!-- <p>Elige el tamaño de la masa</p> -->
+                <select name="masa" id="masa">
+                </select>
+            </div>
+        </section>
+        <section class="oculto" id="ingredientes">
+            <h3 class="heading">Elige tus ingredientes</h3>
+            <div class="padded">
+                <p>Elige los ingredientes para tu pizza</p>
+                <ul id="ulIngredientes">
+
+                </ul>
+            </div>
+        </section>
+        <section id="pedido">
+            
+            <h3 class="heading">Tu Pizza</h3>
+            
+            
+           
+            <div class="padded">
+                           
+              <ul id="masaElegida"></ul>
+              <ul id="listaIngredientes">
+
+              </ul>
+
+              
+            </div>
+            
+            <div  class="footpedido"><h3>Total: <span id="total">0</span>€</h3><button class="modal-trigger" id="btnPedido">Realizar pedido</button></div>
+        </section>
+
+        
+    </div>  
+
+    <div class="flex align-center align-vert modal modal--align">
+        <div class="modal__container">
+          <a class="modal__close modal__close--x" aria-hidden="true">&#x2715;</a>
+          <h2>Datos del pedido</h2>
+          <form action="" method="post">
+            <label for="nombre">Nombre y apellidos:</label><br>
+            <input type="text" id="nombre" name="nombre"><br>
+            <label for="tlf">Teléfono:</label><br>
+            <input type="text" id="tlf" name="tlf">
+            <label for="direccion">Dirección:</label><br>
+            <input type="text" id="direccion" name="direccion">
+            <label for="tlf">Teléfono:</label><br>
+            <input type="text" id="tlf" name="tlf">
+            <button type="submit">Pagar</button>
+          </form>
+          <button class="modal__close">Cancel link</button>
+        </div>
+      </div>
+
+    <footer>
+        <p>Haz tu pizza © <span id="year"></span></p>
+    </footer>
+</body>
+
+<script src="./js/app.js" type="module"></script>
+<script src="./js/modal.js"></script>
+</html>
