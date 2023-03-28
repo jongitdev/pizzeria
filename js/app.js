@@ -53,20 +53,16 @@ listarMasas();
 
 let btnIngredientes = document.getElementsByClassName("add-ing");
 
-console.log(btnIngredientes);
-
  for (const btnIngrediente of btnIngredientes){
-    
-    
-
     let ing = btnIngrediente.dataset.ing;
 
-    console.log(ing)
     btnIngrediente.addEventListener('click', function(e){
-        //console.log(`Click ing: ${ing}`);
+        
         addIngrediente(ing);
      });
  }
+
+
 
 function elegirMasa(valor) {
     //let valor = masa.value;
@@ -77,11 +73,11 @@ function elegirMasa(valor) {
         precio: masas.precio[valor]
     }
 
-    //console.log(objMasa);
+    
     document.getElementById("masas").style.display="none";
     document.getElementById("ingredientes").style.display="flex";
 
-    let txtMasa = `<li><img src='${objMasa.img}'>${objMasa.nombre} <input type="button" onclick="quitarMasa()" class="del" value="-">`;
+    let txtMasa = `<li><img src='${objMasa.img}'>${objMasa.nombre} <input type="button" id="del-masa" class="del" value="-">`;
     document.getElementById("masaElegida").innerHTML = txtMasa;
     
     pedido.masa = objMasa;
@@ -90,7 +86,11 @@ function elegirMasa(valor) {
 
     document.getElementById("total").innerText = total;
     
-
+    let btnDelMasa = document.getElementById("del-masa");
+    
+    btnDelMasa.addEventListener('click', function(e){
+    quitarMasa(); 
+ });
 }
 
 function listarMasas(){
@@ -128,7 +128,7 @@ function addIngrediente(id){
     } else {
         for (i=0; i < pedido.ingredientes.length; i++){
             if (ingredientes[id] == pedido.ingredientes[i]){
-                console.log ("Ingrediente repetido");
+                
                 repetido = true;
             }
         }
@@ -146,7 +146,10 @@ function addIngrediente(id){
     let li = "";
 
     for (i=0; i < pedido.ingredientes.length; i++){
-        li += `<li><img src='${pedido.ingredientes[i].img}'> ${pedido.ingredientes[i].nombre} <input type="button" onclick="quitarIngrediente(${i})" class="del" value="-"></li>`;
+        li += `<li><img src='${pedido.ingredientes[i].img}'> ${pedido.ingredientes[i].nombre} <input type="button" data-deling="${i}" class="del del-ing" value="-"></li>`;
+    
+        
+    
     }
     
 
@@ -154,7 +157,15 @@ function addIngrediente(id){
 
     document.getElementById("total").innerText = total;
 
-    console.log(pedido);
+    let btnDelIngredientes = document.getElementsByClassName("del-ing");
+    
+    for (let btnDelIngrediente of btnDelIngredientes){
+        let ingToDel = btnDelIngrediente.dataset.deling;
+        btnDelIngrediente.addEventListener('click', function(e){
+        
+        quitarIngrediente(ingToDel);
+     });
+    }
 }
 
 function quitarMasa(){
@@ -193,7 +204,7 @@ function quitarIngrediente(id){
 
 function myFunction() {
 
-    //console.log("myFunction");
+    
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
       x.className += " responsive";
