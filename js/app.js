@@ -46,8 +46,27 @@ let masa = document.getElementById("masa");
 
 masa.onchange = function(){elegirMasa(masa.value)};
 
+
+
 listarIngredientes();
 listarMasas();
+
+let btnIngredientes = document.getElementsByClassName("add-ing");
+
+console.log(btnIngredientes);
+
+ for (const btnIngrediente of btnIngredientes){
+    
+    
+
+    let ing = btnIngrediente.dataset.ing;
+
+    console.log(ing)
+    btnIngrediente.addEventListener('click', function(e){
+        //console.log(`Click ing: ${ing}`);
+        addIngrediente(ing);
+     });
+ }
 
 function elegirMasa(valor) {
     //let valor = masa.value;
@@ -92,7 +111,7 @@ function listarIngredientes(){
     let li = "";
 
     for (i=0; i < ingredientes.length; i++){
-        li += `<li><img src='${ingredientes[i].img}'> ${ingredientes[i].nombre} <input type="button" onclick="addIngrediente(${i})" class="add" value="+"> ${ingredientes[i].precio}€</li>`
+        li += `<li><img src='${ingredientes[i].img}'> ${ingredientes[i].nombre} <input type="button" data-ing="${i}" class="add add-ing" value="+"> ${ingredientes[i].precio}€</li>`
     }
 
     document.getElementById("ulIngredientes").innerHTML = li;
