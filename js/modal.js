@@ -1,5 +1,16 @@
 // Modal - JS
 
+function myFunction() {
+
+    
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
 function modal() {
 
   var modal = document.getElementsByClassName('modal')[0],
