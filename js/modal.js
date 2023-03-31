@@ -11,17 +11,17 @@ function myFunction() {
   }
 }
 
-function modal() {
+export function modal(pedido) {
 
   var modal = document.getElementsByClassName('modal')[0],
       trigger = document.getElementsByClassName('modal-trigger')[0],
       close = document.getElementsByClassName('modal__close'); // we loops this to catch the different closers
 
-  closeModal = function() {
+  let closeModal = function() {
     modal.classList.remove('modal--show');
     modal.classList.add('modal--hide');
     // Remove hide class after animation is done
-    afterAnimation = function() {
+    let afterAnimation = function() {
       modal.classList.remove('modal--hide');
     }
     // This listens for the CSS animations to finish and then hides the modal
@@ -33,7 +33,10 @@ function modal() {
 
   // Open the modal 
   trigger.onclick = function() {
-    modal.classList.add('modal--show');
+    
+    if (pedido.masa != undefined){
+      modal.classList.add('modal--show');
+    }
   }
 
   // Close the modal with any element with class 'modal__close'
@@ -60,4 +63,4 @@ function modal() {
     }
   }
 
-}modal();
+}

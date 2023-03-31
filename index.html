@@ -26,7 +26,9 @@
                 <!-- <p>Elige el tamaño de la masa</p> -->
                 <select name="masa" id="masa">
                 </select>
+                
             </div>
+            <p class="error padded oculto" id="error-masa">Debes elegir una masa</p>
         </section>
         <section class="oculto" id="ingredientes">
             <h3 class="heading">Elige tus ingredientes</h3>
@@ -63,18 +65,26 @@
         <div class="modal__container">
           <a class="modal__close modal__close--x" aria-hidden="true">&#x2715;</a>
           <h2>Datos del pedido</h2>
+          <section class="padded-boxes">
+            <article id="form-pedido">
           <form action="" method="post">
             <label for="nombre">Nombre y apellidos:</label><br>
             <input type="text" id="nombre" name="nombre"><br>
             <label for="tlf">Teléfono:</label><br>
-            <input type="text" id="tlf" name="tlf">
+            <input type="text" id="tlf" name="tlf"><br>
             <label for="direccion">Dirección:</label><br>
-            <input type="text" id="direccion" name="direccion">
-            <label for="tlf">Teléfono:</label><br>
-            <input type="text" id="tlf" name="tlf">
-            <button type="submit">Pagar</button>
+            <input type="text" id="direccion" name="direccion"><br>
+            
+            <button type="submit" class="modal-trigger">Pagar</button>
           </form>
-          <button class="modal__close">Cancel link</button>
+        </article>
+        <article id="ticket">
+          <div class="padded">
+            <ul id="ticket-ul"></ul>
+          </div>
+        </article>
+        </section>
+          <!-- <button class="modal__close">Cancel link</button> -->
         </div>
       </div>
 
@@ -84,5 +94,4 @@
 </body>
 
 <script src="./js/app.js" type="module"></script>
-<script src="./js/modal.js"></script>
 </html>

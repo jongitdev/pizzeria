@@ -78,6 +78,13 @@ body{
   margin: 1rem 0;
 }
 
+.error {
+  margin-left: auto;
+  margin-right: auto;
+  color: red;
+  font-weight: bold;
+}
+
 .topnav {
     overflow: hidden;
     background-color: #333;
@@ -119,7 +126,7 @@ body{
     display: none;
 }
 
-#ulIngredientes li, #listaIngredientes li,  #masaElegida li {
+#ulIngredientes li, #listaIngredientes li,  #masaElegida li, #ticket-ul li {
   list-style:none
 }
 
@@ -134,7 +141,7 @@ body{
   margin-right: 5px;
 }
 
-#masas {
+#masas, #form-pedido {
   flex-basis: auto;
   height: auto;
   display: flex;
@@ -152,7 +159,7 @@ body{
   justify-content: flex-start;
 }
 
-#pedido {
+#pedido, #ticket {
   position: relative;
   flex-basis: auto;
   height: auto;

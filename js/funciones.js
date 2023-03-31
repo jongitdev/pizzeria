@@ -1,3 +1,9 @@
+export function initYear() {
+    const d = new Date();
+    let year = d.getFullYear();
+    document.getElementById("year").innerText = year;
+}
+
 export function elegirMasa(valor, masas, pedido) {
     //let valor = masa.value;
     let total =0;
@@ -121,6 +127,18 @@ function addIngrediente(id, pedido, ingredientes){
         quitarIngrediente(ingToDel, ingredientes, pedido);
      });
     }
+
+    let btnPedido = document.getElementById("btnPedido");
+
+    btnPedido.addEventListener('click', function(e){
+        
+        if (pedido.masa != undefined){
+            ticket(pedido);
+            document.getElementById("error-masa").classList.add("oculto");
+        } else {
+            document.getElementById("error-masa").classList.remove("oculto");
+        }
+     });
 }
 
 export function quitarMasa(pedido){
@@ -139,6 +157,17 @@ export function quitarMasa(pedido){
     document.getElementById("ingredientes").style.display="none";
     document.getElementById("masas").style.display="flex";
     document.getElementById("total").innerText = total;
+
+    let btnPedido = document.getElementById("btnPedido");
+
+    btnPedido.addEventListener('click', function(e){
+        
+        if (pedido.masa != undefined){
+            ticket(pedido);document.getElementById("error-masa").classList.add("oculto");
+        } else {
+            document.getElementById("error-masa").classList.remove("oculto");
+        }
+     });
 }
 
 export function quitarIngrediente(id, ingredientes, pedido){
@@ -177,4 +206,26 @@ export function quitarIngrediente(id, ingredientes, pedido){
         quitarIngrediente(ingToDel, ingredientes, pedido);
      });
     }
+
+
+}
+
+function ticket (pedido){
+    let total = 0;
+
+    
+    let li = `<li>${pedido.masa.nombre} ${pedido.masa.precio}€</li>`;
+    total += parseFloat(pedido.masa.precio);
+    for (let ingrediente of pedido.ingredientes){
+        li += `<li>${ingrediente.nombre} ${ingrediente.precio}€</li>`;
+        total += parseFloat(ingrediente.precio);
+    }
+
+    total += total * 0.21;
+    total = total.toFixed(2);
+    li += `<li>-------------------------</li>`;
+    li += `<li>Total + IVA: ${total}€</li>`;
+
+    document.getElementById("ticket-ul").innerHTML = li;
+    
 }

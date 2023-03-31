@@ -1,18 +1,16 @@
 import {masas, ingredientes, pedido} from "./data-pizzeria.js";
-import {elegirMasa, listarMasas, listarIngredientes } from "./funciones.js";
+import {initYear, elegirMasa, listarMasas, listarIngredientes } from "./funciones.js";
+import{modal} from "./modal.js";
 
-const d = new Date();
-let year = d.getFullYear();
-document.getElementById("year").innerText = year;
 
 let masa = document.getElementById("masa");
 
 masa.onchange = function(){elegirMasa(masa.value, masas, pedido)};
 
 
-
+initYear();
 listarIngredientes(ingredientes, pedido);
 listarMasas(masas);
-
+modal(pedido);
 
 
