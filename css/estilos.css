@@ -265,7 +265,7 @@ footer {
 
 /* Modal */
 
-.modal-trigger {
+.modal-trigger, .btn-modal {
   border: none;
   color: white;
   
@@ -282,7 +282,7 @@ footer {
   padding: 8px 10px;
 }
 
-.modal-trigger:hover {
+.modal-trigger:hover, .btn-modal:hover {
   background-color: #038052;
 }
 

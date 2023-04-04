@@ -34,3 +34,12 @@ export let pedido = {
 masa: 0,
 ingredientes: []
 };
+
+export let cesta = {
+    envio: {
+        nombre:"",
+        direccion:"",
+        tlf:0
+    },
+    pizzas: []
+}

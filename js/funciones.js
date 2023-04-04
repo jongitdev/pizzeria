@@ -211,6 +211,7 @@ export function quitarIngrediente(id, ingredientes, pedido){
 }
 
 function ticket (pedido){
+    console.log(pedido);
     let total = 0;
 
     
@@ -227,5 +228,42 @@ function ticket (pedido){
     li += `<li>Total + IVA: ${total}€</li>`;
 
     document.getElementById("ticket-ul").innerHTML = li;
+    
+}
+
+export function listenGuardarCesta(pedido, cesta){
+    let btnGuardarCesta = document.getElementById("guardar-cesta");
+    btnGuardarCesta.addEventListener('click', function(e){
+        
+        guardarCesta(pedido, cesta);
+     });
+}
+
+function guardarCesta (pedido, cesta){
+    let nombre = document.getElementById("nombre").value;
+    let direccion = document.getElementById("direccion").value;
+    let tlf = document.getElementById("tlf").value;
+
+    //console.log(pedido);
+    cesta.envio.nombre = nombre;
+    cesta.envio.direccion = direccion;
+    cesta.envio.tlf = tlf;
+
+    cesta.pizzas.push(pedido);
+    //console.log(cesta);
+    let strCesta = JSON.stringify(cesta)
+    localStorage.setItem("cesta", strCesta);
+
+
+}
+
+export function initCesta (){
+    const cestals = localStorage.getItem("cesta");
+    
+    if (cestals != null){
+        let cesta = JSON.parse(cestals);
+        return cesta;
+    }
+
     
 }
