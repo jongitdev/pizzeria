@@ -1,6 +1,6 @@
 export const masas = {
     nombre: "Masa",
-    img: "../pizzeria/img/base.png",
+    img: "./img/base.png",
     precio: {
         individual: 5,
         mediana: 7,
@@ -10,22 +10,22 @@ export const masas = {
 export const ingredientes = [
 {
     nombre: "Tomate fresco",
-    img: "../pizzeria/img/tomate.png",
+    img: "./img/tomate.png",
     precio: 0.5
 },
 {
     nombre: "Cebolla",
-    img: "../pizzeria/img/cebolla.png",
+    img: "./img/cebolla.png",
     precio: 0.5
 },
 {
     nombre: "Cebolla caramelizada",
-    img: "../pizzeria/img/cebolla-caramelizada.png",
+    img: "./img/cebolla-caramelizada.png",
     precio: 1
 },
 {
     nombre: "Jamón de York",
-    img: "../pizzeria/img/jamonyork.png",
+    img: "./img/jamonyork.png",
     precio: 2
 }
 ];
