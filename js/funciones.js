@@ -9,7 +9,7 @@ export function elegirMasa(valor, masas, pedido) {
     let total =0;
     let objMasa = {
         nombre: `Masa ${valor}` ,
-        img: "../pizzeria/img/base.png",
+        img: "./img/base.png",
         precio: masas.precio[valor]
     }
 
