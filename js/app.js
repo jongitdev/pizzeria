@@ -9,12 +9,14 @@ masa.onchange = function(){elegirMasa(masa.value, masas, pedido)};
 
 
 initYear();
-let cestaInit = initCesta();
-console.log(cestaInit);
+//let cestaInit = initCesta();
+//console.log(cestaInit);
 listarIngredientes(ingredientes, pedido);
 listarMasas(masas);
 modal(pedido);
+
 listenGuardarCesta(pedido, cesta);
+
 
 
 

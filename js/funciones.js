@@ -231,11 +231,17 @@ function ticket (pedido){
     
 }
 
-export function listenGuardarCesta(pedido, cesta){
+export function listenGuardarCesta(pedido,cesta){
     let btnGuardarCesta = document.getElementById("guardar-cesta");
+    
     btnGuardarCesta.addEventListener('click', function(e){
+        let cestaInit = initCesta();
+        if (cestaInit == undefined){
+            guardarCesta(pedido, cesta);
+        } else {
+            guardarCesta(pedido, cestaInit);
+        }
         
-        guardarCesta(pedido, cesta);
      });
 }
 
@@ -248,7 +254,7 @@ function guardarCesta (pedido, cesta){
     cesta.envio.nombre = nombre;
     cesta.envio.direccion = direccion;
     cesta.envio.tlf = tlf;
-
+    //console.log(cesta.pizzas);
     cesta.pizzas.push(pedido);
     //console.log(cesta);
     let strCesta = JSON.stringify(cesta)
